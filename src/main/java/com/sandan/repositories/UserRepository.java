@@ -1,12 +1,13 @@
 package com.sandan.repositories;
 
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.PagingAndSortingRepository;
 
 import com.sandan.entities.UserEntity;
 
-public interface UserRepository extends CrudRepository<UserEntity, Long>{
+/* after create pagination we should change CrudRepository to  PagingAndSortingRepository */
+public interface UserRepository extends PagingAndSortingRepository<UserEntity, Long> {
 
 	UserEntity findByEmail(String email);
-	
+
 	UserEntity findByUserId(String userId);
 }
